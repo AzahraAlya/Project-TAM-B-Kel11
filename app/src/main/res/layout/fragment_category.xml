@@ -8,7 +8,8 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -23,16 +24,19 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <ImageView
                         android:id="@+id/imageCategoryBg"
-                        android:src="@drawable/sample_image_category"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:scaleType="centerCrop"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:src="@drawable/sample_image_category" />
+
                     <ImageView
-                        android:background="#D9770202"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="#024CA6" />
+
                     <ImageView
                         android:id="@+id/imageCategory"
                         android:src="@drawable/sample_image_category"
@@ -71,5 +75,5 @@
                 android:layout_height="wrap_content" />
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
-    
+
 </FrameLayout>
