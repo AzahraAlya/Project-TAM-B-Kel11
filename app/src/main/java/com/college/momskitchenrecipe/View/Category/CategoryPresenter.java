@@ -1,6 +1,8 @@
 package com.college.momskitchenrecipe.View.Category;
 
 
+import androidx.annotation.NonNull;
+
 import com.college.momskitchenrecipe.Model.Meals;
 import com.college.momskitchenrecipe.Utils.Utils;
 
@@ -21,7 +23,7 @@ public class CategoryPresenter {
         Call<Meals> mealsCall = Utils.getAPI().getMealByCategory(category);
         mealsCall.enqueue(new Callback<Meals>() {
             @Override
-            public void onResponse(Call<Meals> call, Response<Meals> response) {
+            public void onResponse(@NonNull Call<Meals> call, @NonNull Response<Meals> response) {
                 view.hideLoading();
                 if (response.isSuccessful() && response.body() != null){
                     view.setMeals(response.body().getMeals());
@@ -31,7 +33,7 @@ public class CategoryPresenter {
             }
 
             @Override
-            public void onFailure(Call<Meals> call, Throwable t) {
+            public void onFailure(@NonNull Call<Meals> call, @NonNull Throwable t) {
                 view.hideLoading();
                 view.onErrorLoading(t.getLocalizedMessage());
             }

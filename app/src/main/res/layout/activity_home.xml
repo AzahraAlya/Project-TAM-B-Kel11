@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".View.home.HomeActivity">
+    tools:context=".View.Home.HomeActivity">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -92,20 +92,21 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="50dp" />
 
-            <include android:id="@+id/shimmer_category"
+            <include
+                android:id="@+id/shimmer_category"
                 layout="@layout/item_recycler_category_shimmer" />
 
             <TextView
-                android:padding="10dp"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:text="@string/app_name"
-                android:background="@color/colorPrimaryDark"
-                android:layout_alignParentBottom="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
                 android:layout_marginTop="20dp"
-                android:fontFamily="@font/tinos_regular"/>
+                android:background="@color/colorPrimaryDark"
+                android:fontFamily="@font/tinos_regular"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="UTS TAM Universitas Lampung"
+                android:textColor="@color/white" />
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
