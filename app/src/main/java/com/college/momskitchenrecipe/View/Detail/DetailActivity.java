@@ -60,11 +60,7 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
     @BindView(R.id.progressBar)
     ProgressBar progressBar;
 
-    @BindView(R.id.youtube)
-    TextView youtube;
 
-    @BindView(R.id.source)
-    TextView source;
 
 
     @Override
@@ -274,17 +270,6 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
         }
 
 
-        youtube.setOnClickListener(v -> {
-            Intent intentYoutube = new Intent(Intent.ACTION_VIEW);
-            intentYoutube.setData(Uri.parse(meal.getStrYoutube()));
-            startActivity(intentYoutube);
-        });
-
-        source.setOnClickListener(v -> {
-            Intent intentSource = new Intent(Intent.ACTION_VIEW);
-            intentSource.setData(Uri.parse(meal.getStrSource()));
-            startActivity(intentSource);
-        });
 
 
     }
