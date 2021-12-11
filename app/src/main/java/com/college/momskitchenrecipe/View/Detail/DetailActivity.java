@@ -60,6 +60,12 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
     @BindView(R.id.progressBar)
     ProgressBar progressBar;
 
+    @BindView(R.id.youtube)
+    TextView youtube;
+
+    @BindView(R.id.source)
+    TextView source;
+
 
 
 
@@ -105,14 +111,14 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
         });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.menu_detail, menu);
-        MenuItem favoriteItem = menu.findItem(R.id.favorite);
-        Drawable favoriteItemColor = favoriteItem.getIcon();
-        setupColorActionBarIcon(favoriteItemColor);
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu){
+//        getMenuInflater().inflate(R.menu.menu_detail, menu);
+//        MenuItem favoriteItem = menu.findItem(R.id.favorite);
+//        Drawable favoriteItemColor = favoriteItem.getIcon();
+//        setupColorActionBarIcon(favoriteItemColor);
+//        return true;
+//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
@@ -268,6 +274,18 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
         if (!meal.getStrMeasure20().isEmpty() && !Character.isWhitespace(meal.getStrMeasure20().charAt(0))) {
             measures.append("\n : " + meal.getStrMeasure20());
         }
+
+        youtube.setOnClickListener(v -> {
+            Intent intentYoutube = new Intent(Intent.ACTION_VIEW);
+            intentYoutube.setData(Uri.parse(meal.getStrYoutube()));
+            startActivity(intentYoutube);
+        });
+
+        source.setOnClickListener(v -> {
+            Intent intentSource = new Intent(Intent.ACTION_VIEW);
+            intentSource.setData(Uri.parse(meal.getStrSource()));
+            startActivity(intentSource);
+        });
 
 
 
